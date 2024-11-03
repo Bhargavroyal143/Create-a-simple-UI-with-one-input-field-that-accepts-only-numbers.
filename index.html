@@ -3,66 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Input Checker</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
-        }
-        .container {
-            text-align: center;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        input[type="number"] {
-            padding: 10px;
-            font-size: 16px;
-            width: 200px;
-            margin-bottom: 20px;
-            border-radius: 5px;
-            border: 1px solid #ccc;
-        }
-        .message {
-            font-size: 18px;
-            color: #333;
-        }
-    </style>
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
-
-<div class="container">
-    <h2>Number Input Checker</h2>
-    <input type="number" id="numberInput" placeholder="Enter a number" />
-    <p class="message" id="message"></p>
-</div>
-
-<script>
-    document.getElementById('numberInput').addEventListener('input', function() {
-        const inputValue = parseInt(this.value, 10);
-        const messageElement = document.getElementById('message');
-
-        if (isNaN(inputValue)) {
-            messageElement.textContent = '';
-            return;
-        }
-
-        if (inputValue < 0) {
-            messageElement.textContent = 'Enter a positive value';
-        } else if (inputValue % 2 === 0) {
-            const nextEvenNumbers = [inputValue + 2, inputValue + 4, inputValue + 6];
-            messageElement.textContent = `Next 3 even numbers: ${nextEvenNumbers.join(', ')}`;
-        } else {
-            const nextOddNumbers = [inputValue + 2, inputValue + 4, inputValue + 6];
-            messageElement.textContent = `Next 3 odd numbers: ${nextOddNumbers.join(', ')}`;
-        }
-    });
-</script>
-
+    <div class="container">
+        <h1>To-Do List</h1>
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="Add a new task..." />
+            <button id="addTaskButton">Add Task</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+    <script src="script.js">
+        
+    </script>
 </body>
 </html>
